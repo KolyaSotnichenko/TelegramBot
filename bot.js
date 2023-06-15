@@ -8,7 +8,7 @@ const apiKey = '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'; // Ваш 
 const bot = new Telegraf('5985563709:AAFqsAnRodXlOki_poTNAJym8d0tmevrX6c'); // Ваш токен бота
 
 // Підключення до OpenAI API
-const openaiInstance = new openai.OpenAI(apiKey);
+const openaiInstance = new openai.OpenAIApi(apiKey);
 
 bot.start((ctx) => ctx.reply('Привіт! Я бот для перевірки та виправлення граматичних помилок. Просто надішліть мені текст, і я перевірю та виправлю помилки.'));
 
