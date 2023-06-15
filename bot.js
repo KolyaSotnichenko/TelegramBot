@@ -55,6 +55,6 @@ function correctTextWithErrors(text, grammarErrors) {
     }
   
     return correctedText;
-  }
+}
 
 bot.launch();
