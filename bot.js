@@ -1,6 +1,7 @@
 // const bot = new Telegraf('5985563709:AAFqsAnRodXlOki_poTNAJym8d0tmevrX6c');
 const { Telegraf } = require('telegraf');
 const axios = require('axios');
+const { GrammarBot } = require('grammarbot');
 
 const bot = new Telegraf('5985563709:AAFqsAnRodXlOki_poTNAJym8d0tmevrX6c');
 
@@ -29,20 +30,20 @@ bot.on('text', async (ctx) => {
 });
 
 async function checkGrammar(text) {
-  try {
-    const response = await axios.post('https://api.languagetool.org/v2/check', null, {
-        params: {
-            text: text,
-      language: 'en-US', // Specify the language for grammar checking
-        }
-    });
-
-    return response.data.matches || [];
-  } catch (error) {
-    console.error('Error occurred during grammar check:', error);
-    return [];
+    try {
+      const grammarBot = new GrammarBot({
+        language: 'en-US', // Встановити потрібну мову для перевірки граматики
+        apiKey: '5ff1eb0498msh0f7ecb615d431ddp1659fejsn02fbf22f2fe5' // Додати свій ключ API GrammarBot
+      });
+  
+      const { matches } = await grammarBot.check(text);
+  
+      return matches || [];
+    } catch (error) {
+      console.error('Error occurred during grammar check:', error);
+      return [];
+    }
   }
-}
 
 function correctTextWithErrors(text, grammarErrors) {
     let correctedText = text;
