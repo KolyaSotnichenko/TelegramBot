@@ -4,7 +4,7 @@ const axios = require('axios');
 const openai = require('openai');
 
 const bot = new Telegraf('5985563709:AAFqsAnRodXlOki_poTNAJym8d0tmevrX6c');
-const apiKey = sk-'Oe4fxTC4kJ9V9G9HJFeGT3BlbkFJctZ7DcKddPVUF7USHKSn'
+const apiKey = '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'
 
 bot.start((ctx) => ctx.reply('Привіт! Я бот для перевірки та виправлення граматичних помилок англійського тексту. Просто надішліть мені текст, і я перевірю та надам пропозиції щодо виправлень.'));
 
