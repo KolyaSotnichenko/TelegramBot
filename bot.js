@@ -1,6 +1,6 @@
 // const bot = new Telegraf('5985563709:AAFqsAnRodXlOki_poTNAJym8d0tmevrX6c');
 // const apiKey = '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'
-const Telegraf = require('telegraf');
+const {Telegraf} = require('telegraf');
 const openai = require('openai');
 
 const apiKey = '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'; // Ваш ключ API OpenAI
